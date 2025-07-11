@@ -185,17 +185,12 @@ export default function Home() {
                 key={index}
                 className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300"
               >
-                <h3 className="text-2xl font-semibold mb-2">
-                  Project {index + 1}
-                </h3>
+                <h3 className="text-2xl font-semibold mb-2">Project {index + 1}</h3>
                 <p className="text-gray-700 mb-4">
                   A cool web project built with React. Replace this with a real
                   project description.
                 </p>
-                <a
-                  href="#"
-                  className="text-blue-800 font-medium hover:underline"
-                >
+                <a href="#" className="text-blue-800 font-medium hover:underline">
                   🔗 View Project
                 </a>
               </div>
@@ -215,9 +210,7 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold mb-10 text-center">
-            Contact Me 🤝
-          </h2>
+          <h2 className="text-4xl font-bold mb-10 text-center">Contact Me 🤝</h2>
           <ul className="space-y-4 text-lg text-center">
             <li>
               <a
