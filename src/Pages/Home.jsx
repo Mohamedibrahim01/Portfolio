@@ -31,9 +31,24 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-5xl sm:text-6xl font-extrabold mb-6 leading-tight">
-            Hey, I'm <span className="text-blue-700">Mohamed Ibrahim</span> 👋
-          </h1>
+          <motion.h1
+            className="text-5xl sm:text-6xl font-extrabold mb-6 leading-tight text-center lg:text-left"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <span className="block">Hey, I'm</span>
+            <motion.span
+              className="block text-blue-700 overflow-hidden border-r-2 border-blue-700 font-mono whitespace-nowrap w-fit mx-auto lg:mx-0"
+              initial={{ width: 0 }}
+              animate={{ width: "16ch" }}
+              transition={{ duration: 2.8, ease: "easeInOut" }}
+            >
+              Mohamed Ibrahim
+            </motion.span>{" "}
+            
+          </motion.h1>
+
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-blue-600">
             Front-End Developer & Self-Learner
           </h2>
@@ -185,12 +200,17 @@ export default function Home() {
                 key={index}
                 className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300"
               >
-                <h3 className="text-2xl font-semibold mb-2">Project {index + 1}</h3>
+                <h3 className="text-2xl font-semibold mb-2">
+                  Project {index + 1}
+                </h3>
                 <p className="text-gray-700 mb-4">
                   A cool web project built with React. Replace this with a real
                   project description.
                 </p>
-                <a href="#" className="text-blue-800 font-medium hover:underline">
+                <a
+                  href="#"
+                  className="text-blue-800 font-medium hover:underline"
+                >
                   🔗 View Project
                 </a>
               </div>
@@ -210,7 +230,9 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold mb-10 text-center">Contact Me 🤝</h2>
+          <h2 className="text-4xl font-bold mb-10 text-center">
+            Contact Me 🤝
+          </h2>
           <ul className="space-y-4 text-lg text-center">
             <li>
               <a
