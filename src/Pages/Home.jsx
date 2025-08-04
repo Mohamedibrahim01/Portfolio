@@ -16,6 +16,7 @@ import {
   SiAxios,
 } from "react-icons/si";
 import myPhoto from "../assets/WhatsApp Image 2025-07-08 at 6.46.50 PM-Photoroom.png";
+import project_1_photo from "../assets/Screenshot 2025-08-03 141818.png";
 
 export default function Home() {
   return (
@@ -46,7 +47,6 @@ export default function Home() {
             >
               Mohamed Ibrahim
             </motion.span>{" "}
-            
           </motion.h1>
 
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-blue-600">
@@ -193,28 +193,110 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-center mb-12">🚧 Projects</h2>
+          <h2 className="text-4xl font-bold text-center mb-12">🚀 Projects</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((_, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300"
-              >
-                <h3 className="text-2xl font-semibold mb-2">
-                  Project {index + 1}
-                </h3>
+            {/* Movie App */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
+              <img
+                src={project_1_photo}
+                alt="Project Preview"
+                className="w-full h-48 object-cover"
+              />
+
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-2">🎬 Movies App</h3>
                 <p className="text-gray-700 mb-4">
-                  A cool web project built with React. Replace this with a real
-                  project description.
+                  Movie browsing app built with React, TypeScript, TailwindCSS,
+                  and Framer Motion. Includes watchlist, ratings, and clean UI.
                 </p>
-                <a
-                  href="#"
-                  className="text-blue-800 font-medium hover:underline"
-                >
-                  🔗 View Project
-                </a>
+                <div className="flex gap-4">
+                  <a
+                    href="https://movies-app-kuva.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  >
+                    🔗 Live Preview
+                  </a>
+                  <a
+                    href="https://github.com/Mohamedibrahim01/Movies-App.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+                  >
+                    💻 Code
+                  </a>
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* Project 2 Example */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
+              <img
+                src="https://via.placeholder.com/600x300?text=Project+Preview"
+                alt="Project 2"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-2">📝 Task Tracker</h3>
+                <p className="text-gray-700 mb-4">
+                  Full-stack task management app using MERN stack with JWT Auth
+                  and CRUD features.
+                </p>
+                <div className="flex gap-4">
+                  <a
+                    href="https://task-tracker-app.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  >
+                    🔗 Live Preview
+                  </a>
+                  <a
+                    href="https://github.com/yourUsername/task-tracker"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+                  >
+                    💻 Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 3 Example */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
+              <img
+                src="https://via.placeholder.com/600x300?text=Portfolio+Preview"
+                alt="Portfolio"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-2">🌐 My Portfolio</h3>
+                <p className="text-gray-700 mb-4">
+                  My personal portfolio built using React, Tailwind, and Framer
+                  Motion. Smooth animations and responsive design.
+                </p>
+                <div className="flex gap-4">
+                  <a
+                    href="https://my-portfolio.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  >
+                    🔗 Live Preview
+                  </a>
+                  <a
+                    href="https://github.com/yourUsername/portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+                  >
+                    💻 Code
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </section>
