@@ -53,10 +53,11 @@ export default function Home() {
             Front-End Developer & Self-Learner
           </h2>
           <p className="text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-            21 y/o IT student. Passionate about crafting modern, clean, and
-            performant web interfaces using React & Tailwind. Always learning.
-            Always improving.
+            Passionate about crafting modern, clean, and performant web
+            interfaces using React & Tailwind. Always learning. Always
+            improving.
           </p>
+
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
             <ScrollLink
               to="projects"
@@ -152,7 +153,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center mb-10">Experience</h2>
           <div className="bg-white rounded-lg shadow p-6">
             <h3 className="text-2xl font-semibold mb-2">Freelance Projects</h3>
-            <p className="text-gray-700 mb-2">2024 - Present</p>
+            <p className="text-gray-700 mb-2">2025 - Present</p>
             <p>
               Created responsive websites using React & Tailwind for practice,
               freelance work, and personal challenges. Building real-world UIs
@@ -174,12 +175,9 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-10">🎓 Education</h2>
           <div className="bg-slate-100 p-6 rounded-lg shadow">
             <h3 className="text-2xl font-semibold mb-1">
-              Bachelor's in Information Technology
+              Information Technology
             </h3>
-            <p className="text-gray-700 mb-2">
-              Egyptian E-Learning University — Final Year
-            </p>
-            <p>Expected Graduation: 2026</p>
+            <p className="text-gray-700 mb-2">Egyptian E-Learning University</p>
           </div>
         </motion.div>
       </section>
@@ -220,74 +218,6 @@ export default function Home() {
                   </a>
                   <a
                     href="https://github.com/Mohamedibrahim01/Movies-App.git"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
-                  >
-                    💻 Code
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 2 Example */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
-              <img
-                src="https://via.placeholder.com/600x300?text=Project+Preview"
-                alt="Project 2"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold mb-2">📝 Task Tracker</h3>
-                <p className="text-gray-700 mb-4">
-                  Full-stack task management app using MERN stack with JWT Auth
-                  and CRUD features.
-                </p>
-                <div className="flex gap-4">
-                  <a
-                    href="https://task-tracker-app.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-                  >
-                    🔗 Live Preview
-                  </a>
-                  <a
-                    href="https://github.com/yourUsername/task-tracker"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
-                  >
-                    💻 Code
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3 Example */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
-              <img
-                src="https://via.placeholder.com/600x300?text=Portfolio+Preview"
-                alt="Portfolio"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold mb-2">🌐 My Portfolio</h3>
-                <p className="text-gray-700 mb-4">
-                  My personal portfolio built using React, Tailwind, and Framer
-                  Motion. Smooth animations and responsive design.
-                </p>
-                <div className="flex gap-4">
-                  <a
-                    href="https://my-portfolio.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-                  >
-                    🔗 Live Preview
-                  </a>
-                  <a
-                    href="https://github.com/yourUsername/portfolio"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
