@@ -228,7 +228,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
             {/* Supplements Store */}
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
               <img
