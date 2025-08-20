@@ -18,6 +18,7 @@ import {
 import myPhoto from "../assets/PhotoOfMe.png";
 import project_Movies_photo from "../assets/MoviesApp.png";
 import project_Supplements_photo from "../assets/supplementsStore.png";
+import Fitness_App_photo from "../assets/FitnessApp.png";
 
 export default function Home() {
   return (
@@ -256,6 +257,41 @@ export default function Home() {
                   </a>
                   <a
                     href="https://github.com/Mohamedibrahim01/Supplements-Store"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+                  >
+                    💻 Code
+                  </a>
+                </div>
+              </div>
+            </div>
+            {/* Fitness App */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
+              <img
+                src={Fitness_App_photo}
+                alt="Fitness App Preview"
+                className="w-full h-48 object-cover"
+              />
+
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-2">🏋️‍♂️ Fitness App</h3>
+                <p className="text-gray-700 mb-4">
+                  Fitness tracking app built with React and TailwindCSS.
+                  Includes workout plans, exercise categories, and responsive UI
+                  for a smooth user experience.
+                </p>
+                <div className="flex gap-4">
+                  <a
+                    href="https://fitness-app-eta-mauve.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  >
+                    🔗 Live Preview
+                  </a>
+                  <a
+                    href="https://github.com/Mohamedibrahim01/FitnessApp"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
