@@ -6,6 +6,7 @@ import {
   FaReact,
   FaGitAlt,
   FaBootstrap,
+  FaWpforms,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -124,6 +125,11 @@ export default function Home() {
                 name: "Bootstrap",
                 icon: <FaBootstrap className="text-purple-700" />,
               },
+              {
+                name: "React Hook Form",
+                icon: <FaWpforms className="text-emerald-500" />,
+              },
+
               {
                 name: "TypeScript",
                 icon: <SiTypescript className="text-blue-500" />,
