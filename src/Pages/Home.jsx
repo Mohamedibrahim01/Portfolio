@@ -20,6 +20,7 @@ import myPhoto from "../assets/PhotoOfMe.png";
 import project_Movies_photo from "../assets/MoviesApp.png";
 import project_Supplements_photo from "../assets/supplementsStore.png";
 import Fitness_App_photo from "../assets/FitnessApp.png";
+import project_FoodApp_photo from "../assets/FoodApp.png";
 
 export default function Home() {
   return (
@@ -272,6 +273,42 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            {/* Food App */}
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
+              <img
+                src={project_FoodApp_photo}
+                alt="Food App Preview"
+                className="w-full h-48 object-cover"
+              />
+
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-2">🍔 Food App</h3>
+                <p className="text-gray-700 mb-4">
+                  Responsive food ordering app built with React, TailwindCSS,
+                  and API integration. Features categories, product details, and
+                  a smooth cart system.
+                </p>
+                <div className="flex gap-4">
+                  <a
+                    href="https://food-app-eight-pearl.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  >
+                    🔗 Live Preview
+                  </a>
+                  <a
+                    href="https://github.com/Mohamedibrahim01/FoodApp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+                  >
+                    💻 Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* Fitness App */}
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
               <img
