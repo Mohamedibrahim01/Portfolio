@@ -1,27 +1,15 @@
 import { Link as ScrollLink } from "react-scroll";
 import { motion } from "framer-motion";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaReact,
-  FaGitAlt,
-  FaBootstrap,
-  FaGithub,
-  FaAngular,
-} from "react-icons/fa";
+import { FaReact, FaAngular } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiRedux,
   SiJavascript,
   SiTypescript,
-  SiSass,
 } from "react-icons/si";
 import myPhoto from "../assets/PhotoOfMe.png";
-import project_Movies_photo from "../assets/MoviesApp.png";
-import project_Supplements_photo from "../assets/supplementsStore.png";
-import Fitness_App_photo from "../assets/FitnessApp.png";
-import project_FoodApp_photo from "../assets/FoodApp.png";
-// import project_StGym_photo from "../assets/StGymDashboard.png";
+import stgym_photo from "../assets/STGYM.png";
+import torostack_photo from "../assets/ToroStack.png";
 
 export default function Home() {
   return (
@@ -98,7 +86,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 2. Skills Section - (تأكد أن الـ id هو skills) */}
+      {/* 2. Skills Section */}
       <section id="skills" className="py-24 px-6 bg-white">
         <motion.div
           className="max-w-6xl mx-auto text-center"
@@ -178,7 +166,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 5. Projects Section - (الآن id واحد فقط لضمان عمل السكرول) */}
+      {/* 5. Projects Section */}
       <section id="projects" className="py-24 bg-slate-100 px-6">
         <motion.div
           className="max-w-6xl mx-auto"
@@ -189,35 +177,41 @@ export default function Home() {
         >
           <h2 className="text-4xl font-bold text-center mb-12">🚀 Projects</h2>
 
-          {/* --- Angular Sub-Section --- */}
+          {/* --- Angular Project --- */}
           <div className="mb-16">
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-2 text-red-600 border-b-2 border-red-600 w-fit pb-2">
-              <FaAngular /> Angular Projects
+              <FaAngular /> Angular Project
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="max-w-md">
               <div className="bg-white rounded-xl shadow-md overflow-hidden border-t-4 border-red-600 hover:shadow-xl transition-all">
                 <img
-                  src={Fitness_App_photo}
+                  src={stgym_photo}
                   alt="ST GYM"
-                  className="w-full h-48 object-cover opacity-80"
+                  className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
                   <h3 className="text-2xl font-semibold mb-2">
                     🏆 ST GYM Management System
                   </h3>
-                  <p className="text-gray-700 mb-4 text-sm font-medium">
-                    Professional Gym management dashboard. Features Admin/Member
-                    roles & Workout Logging. Built with Angular & Tailwind.
+                  <p className="text-gray-700 mb-3 text-sm font-medium">
+                    Professional Gym management dashboard with Admin/Member
+                    roles & Workout Logging. Built with Angular & Node.js.
                   </p>
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {["Angular", "Node.js", "Tailwind"].map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-red-50 text-red-700 border border-red-200 text-xs px-2 py-0.5 rounded-full font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                   <div className="flex gap-4">
                     <a
-                      href="#"
-                      className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700 transition"
-                    >
-                      🔗 Preview
-                    </a>
-                    <a
-                      href="#"
+                      href="https://github.com/Mohamedibrahim01/ST-GYM"
+                      target="_blank"
+                      rel="noreferrer"
                       className="bg-gray-800 text-white px-4 py-2 rounded text-sm hover:bg-gray-900 transition"
                     >
                       💻 Code
@@ -230,130 +224,55 @@ export default function Home() {
 
           <hr className="border-gray-300 mb-16" />
 
-          {/* --- React Sub-Section --- */}
+          {/* --- React Project (Graduation) --- */}
           <div>
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-2 text-cyan-600 border-b-2 border-cyan-600 w-fit pb-2">
-              <FaReact /> React Projects
+              <FaReact /> React Project
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Movies App */}
-              <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                <img
-                  src={project_Movies_photo}
-                  alt="Movies App"
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-blue-800">
-                    🎬 Movies App
-                  </h3>
-                  <p className="text-gray-700 mb-4 text-xs leading-relaxed font-medium">
-                    React, TypeScript, and Tailwind. Watchlist and ratings
-                    integration.
-                  </p>
-                  <div className="flex gap-2">
-                    <a
-                      href="https://movies-app-kuva.vercel.app/"
-                      className="bg-blue-600 text-white px-3 py-1 rounded text-xs"
-                    >
-                      Live
-                    </a>
-                    <a
-                      href="https://github.com/Mohamedibrahim01/Movies-App.git"
-                      className="bg-gray-800 text-white px-3 py-1 rounded text-xs"
-                    >
-                      Code
-                    </a>
-                  </div>
+            <div className="max-w-md">
+              {/* ToroStack — Graduation Project */}
+              <div className="relative bg-white rounded-xl shadow-md overflow-hidden border-2 border-yellow-400 hover:shadow-xl transition-all">
+                <div className="absolute top-3 left-3 z-10 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow flex items-center gap-1">
+                  🎓 Graduation Project
                 </div>
-              </div>
-
-              {/* Supplements Store */}
-              <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
                 <img
-                  src={project_Supplements_photo}
-                  alt="Supplements"
+                  src={torostack_photo}
+                  alt="ToroStack"
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2 text-blue-800">
-                    💊 Supplements Store
+                    ⚔️ ToroStack
                   </h3>
-                  <p className="text-gray-700 mb-4 text-xs leading-relaxed font-medium">
-                    E-commerce store built with React and Framer Motion.
+                  <p className="text-gray-700 mb-3 text-xs leading-relaxed font-medium">
+                    Competitive programming platform with 1v1 battles, AI
+                    integration, learning roadmaps & group challenges. Built
+                    with React + .NET & JWT auth.
                   </p>
-                  <div className="flex gap-2">
-                    <a
-                      href="https://supplements-store.vercel.app/"
-                      className="bg-blue-600 text-white px-3 py-1 rounded text-xs"
-                    >
-                      Live
-                    </a>
-                    <a
-                      href="https://github.com/Mohamedibrahim01/Supplements-Store"
-                      className="bg-gray-800 text-white px-3 py-1 rounded text-xs"
-                    >
-                      Code
-                    </a>
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {["React", ".NET", "JWT", "AI"].map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-cyan-50 text-cyan-700 border border-cyan-200 text-xs px-2 py-0.5 rounded-full font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </div>
-              </div>
-
-              {/* Food App */}
-              <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                <img
-                  src={project_FoodApp_photo}
-                  alt="Food App"
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-blue-800">
-                    🍔 Food App
-                  </h3>
-                  <p className="text-gray-700 mb-4 text-xs leading-relaxed font-medium">
-                    Responsive ordering app with API integration.
-                  </p>
                   <div className="flex gap-2">
                     <a
-                      href="https://food-app-eight-pearl.vercel.app/"
-                      className="bg-blue-600 text-white px-3 py-1 rounded text-xs"
+                      href="https://torostack.me/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition"
                     >
                       Live
                     </a>
                     <a
-                      href="https://github.com/Mohamedibrahim01/FoodApp"
-                      className="bg-gray-800 text-white px-3 py-1 rounded text-xs"
-                    >
-                      Code
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Fitness App (React version) */}
-              <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition border-b-4 border-cyan-500">
-                <img
-                  src={Fitness_App_photo}
-                  alt="Fitness App"
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-blue-800">
-                    🏋️‍♂️ Fitness App (React)
-                  </h3>
-                  <p className="text-gray-700 mb-4 text-xs leading-relaxed font-medium">
-                    Fitness tracking with workout plans and responsive UI.
-                  </p>
-                  <div className="flex gap-2">
-                    <a
-                      href="https://fitness-app-eta-mauve.vercel.app/"
-                      className="bg-blue-600 text-white px-3 py-1 rounded text-xs"
-                    >
-                      Live
-                    </a>
-                    <a
-                      href="https://github.com/Mohamedibrahim01/FitnessApp"
-                      className="bg-gray-800 text-white px-3 py-1 rounded text-xs"
+                      href="https://github.com/Ma7EG/CPTS"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="bg-gray-800 text-white px-3 py-1 rounded text-xs hover:bg-gray-900 transition"
                     >
                       Code
                     </a>
