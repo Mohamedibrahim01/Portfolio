@@ -20,7 +20,6 @@ export default function Navbar() {
 
   const links = [
     { to: "skills", label: "Skills" },
-    { to: "experience", label: "Experience" },
     { to: "education", label: "Education" },
     { to: "projects", label: "Projects" }, // اتأكد إن الترتيب هنا هو نفس ترتيب السكاشن تحت
     { to: "contact", label: "Contact" },
