@@ -8,6 +8,7 @@ import {
   SiRedux,
   SiJavascript,
   SiTypescript,
+  SiAngular,
 } from "react-icons/si";
 import myPhoto from "../assets/me.jpeg";
 import torostack_photo from "../assets/ToroStack.png";
@@ -24,6 +25,7 @@ const skills = [
     icon: <SiTypescript className="text-blue-500" />,
   },
   { name: "React", icon: <FaReact className="text-cyan-500" /> },
+  { name: "Angular", icon: <SiAngular className="text-red-500" /> },
   {
     name: "Tailwind",
     icon: <SiTailwindcss className="text-sky-400" />,
@@ -82,7 +84,7 @@ export default function Home() {
           </motion.h1>
 
           <p className="inline-flex items-center rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-700 mb-5">
-            React Developer • Graduating June 2026
+            Front End Developer - React & Angular
           </p>
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-blue-600">
             Front-End Developer & React Specialist
@@ -91,11 +93,6 @@ export default function Home() {
             Motivated junior frontend developer focused on React.js and
             TailwindCSS. I enjoy building clean, accessible interfaces and
             translating product ideas into responsive user experiences.
-          </p>
-          <p className="text-base leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0 text-blue-900/75">
-            My recent work includes a competitive programming platform with
-            real-time code execution, AI-powered features, and complex state
-            management as part of my graduation project.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
@@ -117,18 +114,6 @@ export default function Home() {
             >
               📞 Contact Me
             </ScrollLink>
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-3 justify-center lg:justify-start text-sm text-blue-800/80">
-            <span className="rounded-full border border-blue-200 bg-white/70 px-3 py-1">
-              React
-            </span>
-            <span className="rounded-full border border-blue-200 bg-white/70 px-3 py-1">
-              TailwindCSS
-            </span>
-            <span className="rounded-full border border-blue-200 bg-white/70 px-3 py-1">
-              Responsive UI
-            </span>
           </div>
         </motion.div>
 
@@ -219,10 +204,7 @@ export default function Home() {
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-2 text-cyan-600 border-b-2 border-cyan-600 w-fit pb-2">
               <FaReact /> React Projects
             </h3>
-            <p className="text-blue-900/70 mb-8 max-w-2xl">
-              A selected set of React projects that highlight UI engineering,
-              product thinking, and real-world application structure.
-            </p>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
               {reactProjects.map(
                 ({
@@ -296,7 +278,7 @@ export default function Home() {
                 ),
               )}
 
-              <div className="rounded-xl border-2 border-dashed border-cyan-200 bg-white/70 p-6 min-h-[24rem] flex flex-col justify-center">
+              {/* <div className="rounded-xl border-2 border-dashed border-cyan-200 bg-white/70 p-6 min-h-[24rem] flex flex-col justify-center">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-600 mb-3">
                   Next project
                 </p>
@@ -308,7 +290,7 @@ export default function Home() {
                   balanced. Once you send the project name, description,
                   technologies, image, and links, I can plug it in quickly.
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </motion.div>
