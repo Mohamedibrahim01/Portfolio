@@ -1,6 +1,12 @@
 import { Link as ScrollLink } from "react-scroll";
 import { motion } from "framer-motion";
-import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa";
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaGitAlt,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 import {
   SiFigma,
   SiShadcnui,
@@ -12,27 +18,30 @@ import {
 } from "react-icons/si";
 import myPhoto from "../assets/me.jpeg";
 import torostack_photo from "../assets/ToroStack.png";
+import movies_photo from "../assets/Movies.png";
+
+const Motion = motion;
 
 const skills = [
   { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
-  { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
+  { name: "CSS", icon: <FaCss3Alt className="text-[#c94f32]" /> },
   {
     name: "JavaScript",
     icon: <SiJavascript className="text-yellow-500" />,
   },
   {
     name: "TypeScript",
-    icon: <SiTypescript className="text-blue-500" />,
+    icon: <SiTypescript className="text-[#18a999]" />,
   },
-  { name: "React", icon: <FaReact className="text-cyan-500" /> },
+  { name: "React", icon: <FaReact className="text-[#18a999]" /> },
   { name: "Angular", icon: <SiAngular className="text-red-500" /> },
   {
     name: "Tailwind",
-    icon: <SiTailwindcss className="text-sky-400" />,
+    icon: <SiTailwindcss className="text-[#70c15a]" />,
   },
   { name: "Redux", icon: <SiRedux className="text-purple-600" /> },
   { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
-  { name: "shadcn/ui", icon: <SiShadcnui className="text-slate-700" /> },
+  { name: "shadcn/ui", icon: <SiShadcnui className="text-[#24211d]" /> },
   { name: "Git", icon: <FaGitAlt className="text-orange-600" /> },
 ];
 
@@ -45,167 +54,236 @@ const reactProjects = [
     imageAlt: "ToroStack",
     description:
       "Competitive programming platform with 1v1 battles, AI integration, learning roadmaps, and group challenges. Built with React, .NET, and JWT authentication.",
-    tags: ["React", ".NET", "JWT", "AI"],
+    tags: ["React", ".NET", "AI"],
     liveUrl: "https://torostack.me/",
-    codeUrl: "https://github.com/Ma7EG/CPTS",
     accent: "yellow",
+  },
+  {
+    title: "Movies App",
+    icon: "🎬",
+    image: movies_photo,
+    imageAlt: "Movies App",
+    description:
+      "A movie discovery app built with React that showcases films, search, and details using a modern UI.",
+    tags: ["React", "API", "UI"],
+    liveUrl: "https://movies-app-kuva.vercel.app/",
+    accent: "teal",
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 36 },
+  show: { opacity: 1, y: 0 },
+};
+
+const staggerGroup = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
 export default function Home() {
   return (
-    <div className="text-blue-900 font-sans overflow-x-hidden">
-      {/* 1. Hero Section */}
+    <div className="relative overflow-x-hidden bg-[#f7f2ea] font-sans text-[#24211d]">
+      <div className="pointer-events-none fixed inset-0 z-0 opacity-[0.08] mix-blend-multiply noise-layer" />
+
       <section
         id="hero"
-        className="min-h-screen bg-gradient-to-br from-blue-50 to-slate-100 px-6 py-20 flex flex-col-reverse lg:flex-row items-center gap-16 max-w-7xl mx-auto"
+        className="relative z-10 min-h-screen px-5 pb-16 pt-28 sm:px-8 lg:px-10"
       >
-        <motion.div
-          className="flex-1 text-center lg:text-left"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <motion.h1
-            className="text-5xl sm:text-6xl font-extrabold mb-6 leading-tight"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+        <div className="mx-auto grid min-h-[calc(100vh-9rem)] max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <Motion.div
+            className="relative text-center lg:text-left"
+            initial="hidden"
+            animate="show"
+            variants={staggerGroup}
           >
-            <span className="block">Hey, I'm</span>
-            <motion.span
-              className="block text-blue-700 overflow-hidden border-r-2 border-blue-700 font-mono whitespace-nowrap w-fit mx-auto lg:mx-0"
-              initial={{ width: 0 }}
-              animate={{ width: "16ch" }}
-              transition={{ duration: 2.8, ease: "easeInOut" }}
+            <Motion.p
+              className="mb-6 inline-flex items-center rounded-full border border-[#24211d]/15 bg-white/55 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#c94f32] shadow-[6px_6px_0_#24211d12]"
+              variants={fadeUp}
             >
-              Mohamed Ibrahim
-            </motion.span>
-          </motion.h1>
+              Front End Developer - React & Angular
+            </Motion.p>
 
-          <p className="inline-flex items-center rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-700 mb-5">
-            Front End Developer - React & Angular
-          </p>
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-blue-600">
-            Front-End Developer & React Specialist
-          </h2>
-          <p className="text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-            Motivated junior frontend developer focused on React.js and
-            TailwindCSS. I enjoy building clean, accessible interfaces and
-            translating product ideas into responsive user experiences.
-          </p>
-
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-            <ScrollLink
-              to="projects"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="cursor-pointer bg-blue-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+            <Motion.h1
+              className="mb-7 text-5xl font-black leading-[0.95] tracking-normal text-[#24211d] sm:text-6xl lg:text-7xl"
+              variants={fadeUp}
             >
-              🚀 View Projects
-            </ScrollLink>
-            <ScrollLink
-              to="contact"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="cursor-pointer border border-blue-800 text-blue-800 px-6 py-3 rounded-lg font-medium hover:bg-blue-800 hover:text-white transition"
-            >
-              📞 Contact Me
-            </ScrollLink>
-          </div>
-        </motion.div>
+              <span className="block">Hey, I'm</span>
+              <Motion.span
+                className="relative mt-3 inline-block overflow-hidden whitespace-nowrap border-r-4 border-[#18a999] font-mono text-[#18a999]"
+                initial={{ width: 0 }}
+                animate={{ width: "16ch" }}
+                transition={{ duration: 2.4, ease: "easeInOut", delay: 0.35 }}
+              >
+                Mohamed Ibrahim
+              </Motion.span>
+            </Motion.h1>
 
-        <motion.div
-          className="flex-1"
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <img
-            src={myPhoto}
-            alt="Mohamed Ibrahim"
-            className="rounded-full shadow-xl w-80 mx-auto ring-4 ring-blue-200"
-          />
-        </motion.div>
+            <Motion.h2
+              className="mb-5 text-2xl font-black text-[#c94f32] sm:text-3xl"
+              variants={fadeUp}
+            >
+              Front-End Developer & React Specialist
+            </Motion.h2>
+            <Motion.p
+              className="mx-auto mb-9 max-w-xl text-lg font-medium leading-relaxed text-[#4d463d] lg:mx-0"
+              variants={fadeUp}
+            >
+              Motivated junior frontend developer focused on React.js and
+              TailwindCSS. I enjoy building clean, accessible interfaces and
+              translating product ideas into responsive user experiences.
+            </Motion.p>
+
+            <Motion.div
+              className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start"
+              variants={fadeUp}
+            >
+              <ScrollLink
+                to="projects"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="group relative cursor-pointer overflow-hidden rounded-lg bg-[#24211d] px-6 py-3 font-black text-white shadow-[7px_7px_0_#18a999] transition duration-300 hover:-translate-y-1 hover:shadow-[10px_10px_0_#18a999]"
+              >
+                <span className="relative z-10">🚀 View Projects</span>
+              </ScrollLink>
+              <ScrollLink
+                to="contact"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="cursor-pointer rounded-lg border-2 border-[#24211d] bg-[#f7f2ea] px-6 py-3 font-black text-[#24211d] shadow-[7px_7px_0_#f2b84b] transition duration-300 hover:-translate-y-1 hover:bg-white"
+              >
+                📞 Contact Me
+              </ScrollLink>
+            </Motion.div>
+          </Motion.div>
+
+          <Motion.div
+            className="relative mx-auto w-full max-w-[27rem]"
+            initial={{ opacity: 0, rotate: 5, x: 60 }}
+            animate={{ opacity: 1, rotate: 0, x: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+          >
+            <Motion.div
+              className="absolute -left-5 top-10 h-28 w-28 border-8 border-[#f2b84b]"
+              animate={{ rotate: [0, 8, 0], y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+            />
+            <Motion.div
+              className="absolute -right-6 bottom-8 h-20 w-20 bg-[#18a999]"
+              animate={{ rotate: [8, -8, 8], x: [0, 8, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+            />
+            <div className="relative rotate-2 overflow-hidden rounded-lg border-4 border-[#24211d] bg-white p-3 shadow-[18px_18px_0_#c94f32]">
+              <img
+                src={myPhoto}
+                alt="Mohamed Ibrahim"
+                className="aspect-[4/5] w-full rounded-md object-cover grayscale-[18%] saturate-125"
+              />
+            </div>
+            <Motion.div
+              className="absolute -bottom-8 left-6 right-6 rounded-lg border-2 border-[#24211d] bg-[#f7f2ea] px-4 py-3 text-center text-sm font-black uppercase tracking-[0.22em] shadow-[8px_8px_0_#24211d]"
+              animate={{ y: [0, -7, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            >
+              Clean UI / Real Code
+            </Motion.div>
+          </Motion.div>
+        </div>
       </section>
 
-      {/* 2. Skills Section */}
-      <section id="skills" className="py-24 px-6 bg-white">
-        <motion.div
-          className="max-w-6xl mx-auto text-center"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+      <div className="relative z-10 overflow-hidden border-y-2 border-[#24211d] bg-[#24211d] py-3 text-white">
+        <Motion.div
+          className="flex w-max gap-8 text-sm font-black uppercase tracking-[0.28em]"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
         >
-          <h2 className="text-4xl font-bold mb-12">🧠 My Skills</h2>
-          <p className="max-w-2xl mx-auto text-blue-900/70 mb-10">
+          {[...skills, ...skills].map(({ name }, index) => (
+            <span key={`${name}-${index}`}>{name}</span>
+          ))}
+        </Motion.div>
+      </div>
+
+      <section
+        id="skills"
+        className="relative z-10 bg-[#fffaf2] px-5 py-24 sm:px-8"
+      >
+        <Motion.div
+          className="mx-auto max-w-6xl text-center"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={staggerGroup}
+        >
+          <Motion.h2
+            className="mb-5 text-4xl font-black text-[#24211d]"
+            variants={fadeUp}
+          >
+            🧠 My Skills
+          </Motion.h2>
+          <Motion.p
+            className="mx-auto mb-12 max-w-2xl text-[#5d554b]"
+            variants={fadeUp}
+          >
             My stack is centered around modern React development with strong
             fundamentals in styling, state management, and JavaScript tooling.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12">
+          </Motion.p>
+          <Motion.div
+            className="mb-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+            variants={staggerGroup}
+          >
             {skills.map(({ name, icon }) => (
-              <div
+              <Motion.div
                 key={name}
-                className="bg-blue-50 hover:bg-blue-100 transition p-5 rounded-xl shadow text-center flex flex-col items-center gap-2 border border-blue-100"
+                className="group flex min-h-32 flex-col items-center justify-center gap-3 rounded-lg border-2 border-[#24211d] bg-[#f7f2ea] p-5 text-center shadow-[6px_6px_0_#24211d] transition duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-[10px_10px_0_#18a999]"
+                variants={fadeUp}
+                whileHover={{ rotate: -2 }}
               >
-                <div className="text-4xl">{icon}</div>
-                <p className="font-medium">{name}</p>
-              </div>
+                <div className="text-4xl transition duration-300 group-hover:scale-110">
+                  {icon}
+                </div>
+                <p className="font-black uppercase tracking-[0.12em]">{name}</p>
+              </Motion.div>
             ))}
-          </div>
-        </motion.div>
+          </Motion.div>
+        </Motion.div>
       </section>
 
-      {false && (
-        <>
-          {/* 3. Experience Section */}
-          <section id="experience" className="py-24 px-6 bg-slate-100">
-            <motion.div
-              className="max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl font-bold text-center mb-10">
-                Experience
-              </h2>
-              <div className="bg-white rounded-lg shadow p-6 border-l-4 border-blue-600">
-                <h3 className="text-2xl font-semibold mb-2">
-                  Freelance Projects
-                </h3>
-                <p className="text-gray-700 mb-2">2025 - Present</p>
-                <p>
-                  Building real-world UIs while mastering front-end best
-                  practices using React & Tailwind.
-                </p>
-              </div>
-            </motion.div>
-          </section>
-        </>
-      )}
-      {/* 5. Projects Section */}
-
-      <section id="projects" className="py-24 bg-slate-100 px-6">
-        <motion.div
-          className="max-w-6xl mx-auto"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+      <section
+        id="projects"
+        className="relative z-10 bg-[#eaf8f4] px-5 py-24 sm:px-8"
+      >
+        <Motion.div
+          className="mx-auto max-w-6xl"
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          variants={staggerGroup}
         >
-          <h2 className="text-4xl font-bold text-center mb-12">🚀 Projects</h2>
+          <Motion.h2
+            className="mb-12 text-center text-4xl font-black text-[#24211d]"
+            variants={fadeUp}
+          >
+            🚀 Projects
+          </Motion.h2>
 
-          {/* --- React Project (Graduation) --- */}
           <div>
-            <h3 className="text-2xl font-bold mb-8 flex items-center gap-2 text-cyan-600 border-b-2 border-cyan-600 w-fit pb-2">
+            <Motion.h3
+              className="mb-8 flex w-fit items-center gap-2 border-b-4 border-[#18a999] pb-2 text-2xl font-black text-[#128173]"
+              variants={fadeUp}
+            >
               <FaReact /> React Projects
-            </h3>
+            </Motion.h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <Motion.div
+              className="grid grid-cols-1 items-start gap-8 md:grid-cols-2"
+              variants={staggerGroup}
+            >
               {reactProjects.map(
                 ({
                   title,
@@ -216,40 +294,42 @@ export default function Home() {
                   description,
                   tags,
                   liveUrl,
-                  codeUrl,
                   accent,
                 }) => (
-                  <div
+                  <Motion.div
                     key={title}
-                    className={`relative bg-white rounded-xl shadow-md overflow-hidden border-2 hover:shadow-xl transition-all ${
+                    className={`group relative overflow-hidden rounded-lg border-2 bg-[#fffaf2] shadow-[10px_10px_0_#24211d] transition-all duration-300 hover:-translate-y-2 hover:shadow-[14px_14px_0_#c94f32] ${
                       accent === "yellow"
-                        ? "border-yellow-400"
-                        : "border-cyan-200 border-dashed"
+                        ? "border-[#f2b84b]"
+                        : "border-[#18a999] border-dashed"
                     }`}
+                    variants={fadeUp}
                   >
                     {badge && (
-                      <div className="absolute top-3 left-3 z-10 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow flex items-center gap-1">
+                      <div className="absolute left-3 top-3 z-10 flex items-center gap-1 rounded-full border-2 border-[#24211d] bg-[#f2b84b] px-3 py-1 text-xs font-black text-[#24211d] shadow-[4px_4px_0_#24211d]">
                         <span>{icon}</span>
                         <span>{badge}</span>
                       </div>
                     )}
-                    <img
-                      src={image}
-                      alt={imageAlt}
-                      className="w-full h-48 object-cover"
-                    />
+                    <div className="overflow-hidden border-b-2 border-[#24211d]">
+                      <img
+                        src={image}
+                        alt={imageAlt}
+                        className="h-56 w-full object-cover transition duration-700 group-hover:scale-105"
+                      />
+                    </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2 text-blue-800">
-                        ⚔️ {title}
+                      <h3 className="mb-3 text-2xl font-black text-[#24211d]">
+                        {icon} {title}
                       </h3>
-                      <p className="text-gray-700 mb-4 text-sm leading-relaxed font-medium">
+                      <p className="mb-5 text-sm font-semibold leading-relaxed text-[#4d463d]">
                         {description}
                       </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="mb-5 flex flex-wrap gap-2">
                         {tags.map((tag) => (
                           <span
                             key={tag}
-                            className="bg-cyan-50 text-cyan-700 border border-cyan-200 text-xs px-2 py-0.5 rounded-full font-medium"
+                            className="rounded-full border border-[#18a999] bg-white px-3 py-1 text-xs font-black text-[#128173]"
                           >
                             {tag}
                           </span>
@@ -260,83 +340,78 @@ export default function Home() {
                           href={liveUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition"
+                          className="inline-flex items-center gap-2 rounded-lg bg-[#24211d] px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-white transition duration-300 hover:bg-[#c94f32]"
                         >
-                          Live
-                        </a>
-                        <a
-                          href={codeUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="bg-gray-800 text-white px-3 py-1 rounded text-xs hover:bg-gray-900 transition"
-                        >
-                          Code
+                          Live Demo <FaExternalLinkAlt />
                         </a>
                       </div>
                     </div>
-                  </div>
+                  </Motion.div>
                 ),
               )}
-
-              {/* <div className="rounded-xl border-2 border-dashed border-cyan-200 bg-white/70 p-6 min-h-[24rem] flex flex-col justify-center">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-600 mb-3">
-                  Next project
-                </p>
-                <h4 className="text-2xl font-bold text-blue-800 mb-3">
-                  Your upcoming React project goes here
-                </h4>
-                <p className="text-blue-900/70 leading-relaxed">
-                  I left space for the next card so the section already feels
-                  balanced. Once you send the project name, description,
-                  technologies, image, and links, I can plug it in quickly.
-                </p>
-              </div> */}
-            </div>
+            </Motion.div>
           </div>
-        </motion.div>
+        </Motion.div>
       </section>
-      {/* 4. Education Section */}
-      <section id="education" className="py-24 px-6 bg-white">
-        <motion.div
-          className="max-w-4xl mx-auto text-center"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+
+      <section
+        id="education"
+        className="relative z-10 bg-[#f7f2ea] px-5 py-24 sm:px-8"
+      >
+        <Motion.div
+          className="mx-auto max-w-4xl text-center"
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          variants={staggerGroup}
         >
-          <h2 className="text-4xl font-bold mb-10">🎓 Education</h2>
-          <div className="bg-slate-100 p-6 rounded-lg shadow">
-            <h3 className="text-2xl font-semibold mb-1">
-              Information Technology
-            </h3>
-            <p className="text-gray-700 mb-2">Egyptian E-Learning University</p>
-            <p className="text-sm text-blue-900/70">
-              Expected graduation: June 2026
+          <Motion.h2
+            className="mb-10 text-4xl font-black text-[#24211d]"
+            variants={fadeUp}
+          >
+            🎓 Education
+          </Motion.h2>
+          <Motion.div
+            className="mx-auto max-w-2xl rounded-lg border-2 border-[#24211d] bg-[#fffaf2] p-7 shadow-[10px_10px_0_#f2b84b]"
+            variants={fadeUp}
+            whileHover={{ rotate: 1, y: -4 }}
+          >
+            <h3 className="mb-1 text-2xl font-black">Information Technology</h3>
+            <p className="mb-2 font-semibold text-[#4d463d]">
+              Egyptian E-Learning University
             </p>
-          </div>
-        </motion.div>
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-[#c94f32]">
+              graduated: June 2026
+            </p>
+          </Motion.div>
+        </Motion.div>
       </section>
 
-      {/* 6. Contact Section */}
       <section
         id="contact"
-        className="min-h-[70vh] flex flex-col justify-center items-center bg-blue-50 text-blue-900 px-6 py-20"
+        className="relative z-10 flex min-h-[70vh] flex-col items-center justify-center bg-[#24211d] px-5 py-20 text-[#fffaf2] sm:px-8"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <Motion.div
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          variants={staggerGroup}
         >
-          <h2 className="text-4xl font-bold mb-10 text-center">
+          <Motion.h2
+            className="mb-10 text-center text-4xl font-black"
+            variants={fadeUp}
+          >
             Contact Me 🤝
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          </Motion.h2>
+          <Motion.div
+            className="grid grid-cols-2 gap-4 text-center md:grid-cols-4"
+            variants={staggerGroup}
+          >
             <a
               href="https://www.linkedin.com/in/mohamed-ibrahim-733952214"
               target="_blank"
               rel="noreferrer"
-              className="bg-white p-4 rounded-xl shadow hover:text-blue-600 transition font-bold uppercase text-xs tracking-widest border-b-4 border-blue-600"
+              className="rounded-lg border-2 border-[#fffaf2] bg-[#fffaf2] p-4 text-xs font-black uppercase tracking-widest text-[#24211d] shadow-[6px_6px_0_#18a999] transition duration-300 hover:-translate-y-2"
             >
               💼 LinkedIn
             </a>
@@ -344,13 +419,13 @@ export default function Home() {
               href="https://github.com/Mohamedibrahim01"
               target="_blank"
               rel="noreferrer"
-              className="bg-white p-4 rounded-xl shadow hover:text-blue-600 transition font-bold uppercase text-xs tracking-widest border-b-4 border-gray-800"
+              className="rounded-lg border-2 border-[#fffaf2] bg-[#fffaf2] p-4 text-xs font-black uppercase tracking-widest text-[#24211d] shadow-[6px_6px_0_#c94f32] transition duration-300 hover:-translate-y-2"
             >
               🐙 GitHub
             </a>
             <a
               href="mailto:ibrahim24876@gmail.com"
-              className="bg-white p-4 rounded-xl shadow hover:text-blue-600 transition font-bold uppercase text-xs tracking-widest border-b-4 border-red-500"
+              className="rounded-lg border-2 border-[#fffaf2] bg-[#fffaf2] p-4 text-xs font-black uppercase tracking-widest text-[#24211d] shadow-[6px_6px_0_#f2b84b] transition duration-300 hover:-translate-y-2"
             >
               📧 Gmail
             </a>
@@ -358,12 +433,12 @@ export default function Home() {
               href="https://wa.me/201159588996"
               target="_blank"
               rel="noreferrer"
-              className="bg-white p-4 rounded-xl shadow hover:text-blue-600 transition font-bold uppercase text-xs tracking-widest border-b-4 border-green-500"
+              className="rounded-lg border-2 border-[#fffaf2] bg-[#fffaf2] p-4 text-xs font-black uppercase tracking-widest text-[#24211d] shadow-[6px_6px_0_#70c15a] transition duration-300 hover:-translate-y-2"
             >
               💬 WhatsApp
             </a>
-          </div>
-        </motion.div>
+          </Motion.div>
+        </Motion.div>
       </section>
     </div>
   );

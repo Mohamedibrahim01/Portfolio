@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #f7f2ea;
+  }
+
+  ::selection {
+    background: #f2b84b;
+    color: #24211d;
+  }
+}
+
+@layer utilities {
+  .noise-layer {
+    background-image:
+      linear-gradient(90deg, #24211d 1px, transparent 1px),
+      linear-gradient(#24211d 1px, transparent 1px);
+    background-size: 34px 34px;
+  }
+}

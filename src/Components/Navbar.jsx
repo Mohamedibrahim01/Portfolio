@@ -9,7 +9,6 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
-  // تأثير عند السكرول عشان يغير شكل النافبار
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -21,31 +20,29 @@ export default function Navbar() {
   const links = [
     { to: "skills", label: "Skills" },
     { to: "education", label: "Education" },
-    { to: "projects", label: "Projects" }, // اتأكد إن الترتيب هنا هو نفس ترتيب السكاشن تحت
+    { to: "projects", label: "Projects" },
     { to: "contact", label: "Contact" },
   ];
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
+      className={`fixed left-0 top-0 z-[100] w-full px-5 transition-all duration-300 sm:px-8 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-lg py-3"
+          ? "border-b-2 border-[#24211d] bg-[#fffaf2]/90 py-3 shadow-[0_8px_0_#24211d12] backdrop-blur-md"
           : "bg-transparent py-5"
-      } px-6`}
+      }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo */}
+      <div className="mx-auto flex max-w-7xl items-center justify-between">
         <ScrollLink
           to="hero"
           smooth={true}
           duration={500}
-          className="cursor-pointer text-2xl font-black tracking-tighter text-blue-800 hover:text-blue-600 transition"
+          className="cursor-pointer text-2xl font-black tracking-normal text-[#24211d] transition hover:text-[#c94f32]"
           onClick={closeMenu}
         >
-          Mohamed Ibrahim<span className="text-blue-400">.</span>
+          Mohamed Ibrahim<span className="text-[#18a999]">.</span>
         </ScrollLink>
 
-        {/* Desktop Links */}
-        <div className="hidden lg:flex items-center space-x-8">
+        <div className="hidden items-center gap-2 rounded-full border-2 border-[#24211d]/10 bg-white/45 px-2 py-2 backdrop-blur lg:flex">
           {links.map(({ to, label }) => (
             <ScrollLink
               key={to}
@@ -53,27 +50,27 @@ export default function Navbar() {
               smooth={true}
               duration={500}
               spy={true}
-              offset={-80} // التريكة هنا: عشان السكرول ميغطيش عنوان السكشن
-              activeClass="text-blue-600 border-b-2 border-blue-600"
-              className="cursor-pointer text-blue-900/80 hover:text-blue-700 font-bold text-sm uppercase tracking-widest transition-all pb-1"
+              offset={-80}
+              activeClass="bg-[#24211d] text-white"
+              className="cursor-pointer rounded-full px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#4d463d] transition-all hover:bg-[#f2b84b] hover:text-[#24211d]"
             >
               {label}
             </ScrollLink>
           ))}
         </div>
 
-        {/* Hamburger Button */}
-        <div
-          className="lg:hidden text-2xl text-blue-800 cursor-pointer z-[110]"
+        <button
+          type="button"
+          aria-label="Toggle navigation menu"
+          className="z-[110] grid h-11 w-11 cursor-pointer place-items-center rounded-lg border-2 border-[#24211d] bg-[#fffaf2] text-xl text-[#24211d] shadow-[4px_4px_0_#18a999] lg:hidden"
           onClick={toggleMenu}
         >
           {isOpen ? <FaTimes /> : <FaBars />}
-        </div>
+        </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-white z-[105] flex flex-col items-center justify-center space-y-8 transition-transform duration-500 lg:hidden ${
+        className={`fixed inset-0 z-[105] flex flex-col items-center justify-center space-y-8 bg-[#fffaf2] transition-transform duration-500 lg:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -84,7 +81,7 @@ export default function Navbar() {
             smooth={true}
             duration={500}
             onClick={closeMenu}
-            className="cursor-pointer text-blue-800 hover:text-blue-600 font-black text-2xl uppercase tracking-tighter"
+            className="cursor-pointer text-3xl font-black uppercase tracking-normal text-[#24211d] transition hover:text-[#c94f32]"
           >
             {label}
           </ScrollLink>
